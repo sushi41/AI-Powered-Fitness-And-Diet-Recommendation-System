@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='youraccount.css') }}">
+
+    <title>Create Your Account</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="content">
+                <img src="https://logos-download.com/wp-content/uploads/2016/06/MyFitnessPal_logo-700x130.png" alt="MyFitnessPal Logo">
+                <h3>Create Your Free Account - Step 1 of 4</h3>
+            </div>
+            <div class="underline"></div>
+        </div>
+
+        <div class="main">
+            <div class="content">
+                <h1>Your Account Information</h1>
+
+                {% if error %}
+                <div class="error-message" style="color: red; margin-bottom: 15px;">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+                <!-- Form with POST method to submit user data -->
+                <form action="{{ url_for('create_account') }}" method="POST">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email" required> <br>
+
+                    <label for="password" class="pass">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Your Password" required>  
+                    <label>6-255 characters, no spaces</label><br>
+
+                    <button type="submit">Continue</button>  <!-- Button to submit the form -->
+                </form>
+
+                <br>
+                <button type="button" class="fb">Continue With Facebook</button>  
+                <label>We will never post anything without your permission</label>
+            </div>
+
+            <div class="content_end">
+                <a href="#"><i class="fa fa-play"></i> Click here to log in.</a> <br>
+                <a href="#"><i class="fa fa-play"></i> Forgot your password?</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
