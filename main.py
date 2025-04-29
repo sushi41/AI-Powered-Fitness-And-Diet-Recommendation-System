@@ -3,7 +3,7 @@ import google.generativeai as genai
 import os
 
 # Set your API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyA_n8Ue6kzxdKyoaUGWBceshRI5NzvXxNI"
+os.environ["GOOGLE_API_KEY"] = "Your Api key"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 app = Flask(__name__)
